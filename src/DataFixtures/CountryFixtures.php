@@ -14,21 +14,21 @@ class CountryFixtures extends Fixture
         $country->setName('France');
         $manager->persist($country);
 
-        $country = new Country();
-        $country->setName('Italie');
-        $manager->persist($country);
+        $country2 = new Country();
+        $country2->setName('Italie');
+        $manager->persist($country2);
 
-        $country = new Country();
-        $country->setName('Allemagne');
-        $manager->persist($country);
+        $country3 = new Country();
+        $country3->setName('Allemagne');
+        $manager->persist($country3);
 
-        $country = new Country();
-        $country->setName('Espagne');
-        $manager->persist($country);
+        $country4 = new Country();
+        $country4->setName('Espagne');
+        $manager->persist($country4);
 
-        $country = new Country();
-        $country->setName('Royaume-Uni');
-        $manager->persist($country);
+        $country5 = new Country();
+        $country5->setName('Royaume-Uni');
+        $manager->persist($country5);
 
         $manager->flush();
     }

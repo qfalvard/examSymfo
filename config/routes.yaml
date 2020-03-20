@@ -1,3 +1,3 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# index:
+#   path: about/
+#   controller: App\Controller\CountryController::about
