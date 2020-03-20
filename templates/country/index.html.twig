@@ -7,7 +7,11 @@
 {% for country in countries %}
     <h2>
         <a href="{{ path("country_show", {country: country.id}) }}">{{ country.name }}</a>
-    </h2>    
+    </h2>
+    Nombre de personnes contaminées : <small>{{ country.contaminated }}</small> <br>
+    Nombre de personnes guéries : <small>{{ country.healed }}</small> <br>
+    Nombre de personnes zombifiées : <small>{{ country.zombified }}</small> <br>
+    {{ country.green }}
 {% endfor %}
 
 {% endblock %}

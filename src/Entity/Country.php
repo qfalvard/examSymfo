@@ -80,4 +80,43 @@ class Country
 
         return $this;
     }
+    public function contaminated()
+    {
+        $somme = 0;
+
+        foreach ($this->getStats() as $contaminated) {
+            $somme += $contaminated->getContaminated();
+        }
+        return $somme;
+    }
+
+    public function healed()
+    {
+        $somme = 0;
+
+        foreach ($this->getStats() as $healed) {
+            $somme += $healed->getHealed();
+        }
+        return $somme;
+    }
+
+    public function zombified()
+    {
+        $somme = 0;
+
+        foreach ($this->getStats() as $zombified) {
+            $somme += $zombified->getZombified();
+        }
+        return $somme;
+    }
+
+    // public function green()
+    // {
+    //     if ($this->healed() > $this->contaminated()){
+    //         return $this->healed();
+    //     }
+    //     else{
+    //         return "zob";
+    //     }
+    // }
 }
