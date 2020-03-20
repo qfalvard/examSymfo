@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CountryController extends AbstractController
 {
     /**
-     * @Route("/country", name="country_index")
+     * @Route("/", name="country_index")
      */
     public function index()
     {
@@ -56,7 +56,9 @@ class CountryController extends AbstractController
             $entityManager->persist($country);
             $entityManager->flush();
 
-            return $this->redirectToRoute('country_index');
+            return $this->render('country/new.html.twig', [
+                'form' => $form->createView()
+            ]);
         }
 
         return $this->render('country/new.html.twig', [
