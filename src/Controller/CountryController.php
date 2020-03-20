@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Country;
 use App\Entity\Stat;
 use App\Form\CountryType;
+use App\Repository\CountryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,9 +17,8 @@ class CountryController extends AbstractController
      */
     public function index()
     {
-        $countries = $this->getDoctrine()->getRepository(Country::class)->findAll();
-        
-        dd($countries);
+        $countries = $this->getDoctrine()->getRepository(Country::class)->findBy([], ['name' => "ASC"]);
+
         return $this->render('country/index.html.twig', [
             'countries' => $countries,
         ]);
@@ -30,8 +30,13 @@ class CountryController extends AbstractController
      */
     public function show(Country $country)
     {
+        $date = $this->getDoctrine()->getRepository(Stat::class)->findBy([], ['statDate' => "ASC"]);
+
+        dd($date);
+
         return $this->render('country/show.html.twig', [
-            'country' => $country
+            'date' => $date,
+            'country' => $country,
         ]);
 
     }
