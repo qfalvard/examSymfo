@@ -110,13 +110,14 @@ class Country
         return $somme;
     }
 
-    // public function green()
-    // {
-    //     if ($this->healed() > $this->contaminated()){
-    //         return $this->healed();
-    //     }
-    //     else{
-    //         return "zob";
-    //     }
-    // }
+    public function green()
+    {
+
+        if ($this->healed() > $this->contaminated()){
+            return "ok";
+        }
+        else{
+            return "zob";
+        }
+    }
 }

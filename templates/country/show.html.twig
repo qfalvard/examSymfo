@@ -12,7 +12,12 @@
         <div class="my-2 border">
             <strong>A la date du </strong> {{ stat.statDate | date("d/m/Y") }} <br>
             <strong>Nombre de personnes contaminées ce jour : </strong>{{ stat.contaminated }}<br>
-            <strong>Nombre de personnes guéries ce jour :</strong>{{ stat.healed }}<br>
+            <strong>Nombre de personnes guéries ce jour :</strong>
+                {% if stat.contaminated < stat.healed %}
+                <p class="text-success">{{stat.healed}}</p>
+                {% else %}
+                <p class="text-danger">{{stat.healed}}</p>
+                {% endif %}</small> <br>
             <strong>Nombre de personnes zombifiées ce jour :</strong>{{ stat.zombified }}<br>
         </div>
         {% endfor %}

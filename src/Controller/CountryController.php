@@ -16,8 +16,9 @@ class CountryController extends AbstractController
      */
     public function index()
     {
-
         $countries = $this->getDoctrine()->getRepository(Country::class)->findAll();
+        
+        dd($countries);
         return $this->render('country/index.html.twig', [
             'countries' => $countries,
         ]);
