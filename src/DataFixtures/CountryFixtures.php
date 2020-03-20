@@ -30,6 +30,10 @@ class CountryFixtures extends Fixture
         $country5->setName('Royaume-Uni');
         $manager->persist($country5);
 
+        $country6 = new Country();
+        $country6->setName('Grolland');
+        $manager->persist($country6);
+
         $manager->flush();
     }
 }

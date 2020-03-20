@@ -5,7 +5,9 @@
 {% block body %}
 
 {% for country in countries %}
-    <h2>{{ country.name }}</h2>
+    <h2>
+        <a href="{{ path("country_show", {country: country.id}) }}">{{ country.name }}</a>
+    </h2>    
 {% endfor %}
 
 {% endblock %}

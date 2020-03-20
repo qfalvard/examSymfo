@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Country;
 use App\Entity\Stat;
 use App\Form\CountryType;
-use App\Repository\StatRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,18 +12,30 @@ use Symfony\Component\Routing\Annotation\Route;
 class CountryController extends AbstractController
 {
     /**
-     * @Route("", name="country_index")
+     * @Route("/country", name="country_index")
      */
-    public function index(StatRepository $stats)
+    public function index()
     {
 
         $countries = $this->getDoctrine()->getRepository(Country::class)->findAll();
-        $stats = $this->getDoctrine()->getRepository(Stat::class)->findAll();
+
+        // dd($stats);
 
         return $this->render('country/index.html.twig', [
             'countries' => $countries,
-            'stats' => $stats
         ]);
+    }
+
+    /**
+     * @Route("/country/{country}", name="country_show", methods={"GET"}, requirements={"country"="\d+"})
+     * @param Country $country
+     */
+    public function show(Country $country)
+    {
+        return $this->render('country/show.html.twig', [
+            'country' => $country
+        ]);
+
     }
 
     /**

@@ -55,7 +55,12 @@ class Country
      */
     public function getStats(): Collection
     {
-        return $this->stats;
+        foreach ($this->getStats() as $stat) {
+            $healed = $stat->getMessage();
+
+            return $healed;
+        }
+        // return $this->stats;
     }
 
     public function addStat(Stat $stat): self

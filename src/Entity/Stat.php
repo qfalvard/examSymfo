@@ -17,17 +17,17 @@ class Stat
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $contaminated;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $healed;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $zombified;
 
@@ -47,36 +47,36 @@ class Stat
         return $this->id;
     }
 
-    public function getContaminated(): ?string
+    public function getContaminated(): ?int
     {
         return $this->contaminated;
     }
 
-    public function setContaminated(?string $contaminated): self
+    public function setContaminated(?int $contaminated): self
     {
         $this->contaminated = $contaminated;
 
         return $this;
     }
 
-    public function getHealed(): ?string
+    public function getHealed(): ?int
     {
         return $this->healed;
     }
 
-    public function setHealed(?string $healed): self
+    public function setHealed(?int $healed): self
     {
         $this->healed = $healed;
 
         return $this;
     }
 
-    public function getZombified(): ?string
+    public function getZombified(): ?int
     {
         return $this->zombified;
     }
 
-    public function setZombified(?string $zombified): self
+    public function setZombified(?int $zombified): self
     {
         $this->zombified = $zombified;
 
