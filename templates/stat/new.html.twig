@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stat New{% endblock %}
+
+{% block body %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-success">Créer une statistique</button>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

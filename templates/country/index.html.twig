@@ -4,8 +4,6 @@
 
 {% block body %}
 
-<a class="btn btn-danger mt-2" href="{{ path("country_new") }}">Ajouter un pays</a>
-
 {% for country in countries %}
     <h2>{{ country.name }}</h2>
 {% endfor %}
